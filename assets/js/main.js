@@ -76,6 +76,33 @@ const TOOLS_DATA = [
     icon: "qr_code_2",
     popular: true,
   },
+  {
+    id: "luas-tanah",
+    name: "Kalkulator Luas Tanah",
+    category: "Rumah",
+    description: "Hitung luas tanah dan estimasi nilainya per meter persegi.",
+    url: "/calculators/luas-tanah.html",
+    icon: "square_foot",
+    popular: false,
+  },
+  {
+    id: "cat",
+    name: "Kalkulator Kebutuhan Cat",
+    category: "Rumah",
+    description: "Hitung liter cat yang dibutuhkan untuk mengecat ruangan.",
+    url: "/calculators/cat.html",
+    icon: "format_paint",
+    popular: false,
+  },
+  {
+    id: "keramik",
+    name: "Kalkulator Kebutuhan Keramik",
+    category: "Rumah",
+    description: "Hitung jumlah keping keramik yang dibutuhkan untuk lantai.",
+    url: "/calculators/keramik.html",
+    icon: "grid_view",
+    popular: false,
+  },
 ];
 
 /* Analytics placeholder — tidak mengirim data pribadi apa pun */

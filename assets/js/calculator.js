@@ -185,6 +185,83 @@ function calculateGPA(mataKuliahList) {
   return { totalSKS, totalMutu, ipk };
 }
 
+/* 8. KALKULATOR LUAS TANAH */
+function calculateLandArea(panjang, lebar, hargaPerM2) {
+  if (!CalcUtils.isValidNumber(panjang) || panjang <= 0) {
+    throw new Error("Panjang tanah harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(lebar) || lebar <= 0) {
+    throw new Error("Lebar tanah harus lebih dari 0.");
+  }
+  const luas = panjang * lebar;
+  let estimasiNilai = null;
+  if (hargaPerM2 !== null && hargaPerM2 !== undefined && hargaPerM2 !== "") {
+    if (!CalcUtils.isValidNumber(hargaPerM2) || hargaPerM2 < 0) {
+      throw new Error("Harga per meter persegi tidak valid.");
+    }
+    estimasiNilai = luas * hargaPerM2;
+  }
+  return { luas, estimasiNilai };
+}
+
+/* 9. KALKULATOR KEBUTUHAN CAT */
+function calculatePaint(panjangRuangan, lebarRuangan, tinggiDinding, luasBukaan, jumlahLapisan, dayaSebarPerLiter) {
+  if (!CalcUtils.isValidNumber(panjangRuangan) || panjangRuangan <= 0) {
+    throw new Error("Panjang ruangan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(lebarRuangan) || lebarRuangan <= 0) {
+    throw new Error("Lebar ruangan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(tinggiDinding) || tinggiDinding <= 0) {
+    throw new Error("Tinggi dinding harus lebih dari 0.");
+  }
+  luasBukaan = CalcUtils.isValidNumber(luasBukaan) ? luasBukaan : 0;
+  if (luasBukaan < 0) {
+    throw new Error("Luas pintu/jendela tidak boleh negatif.");
+  }
+  if (!CalcUtils.isValidNumber(jumlahLapisan) || jumlahLapisan <= 0) {
+    throw new Error("Jumlah lapisan cat minimal 1.");
+  }
+  if (!CalcUtils.isValidNumber(dayaSebarPerLiter) || dayaSebarPerLiter <= 0) {
+    throw new Error("Daya sebar cat per liter harus lebih dari 0.");
+  }
+
+  const kelilingRuangan = 2 * (panjangRuangan + lebarRuangan);
+  const luasDindingKotor = kelilingRuangan * tinggiDinding;
+  const luasDindingBersih = Math.max(luasDindingKotor - luasBukaan, 0);
+  if (luasDindingBersih === 0) {
+    throw new Error("Luas dinding setelah dikurangi bukaan menjadi 0. Periksa kembali data yang dimasukkan.");
+  }
+  const totalLuasDicat = luasDindingBersih * jumlahLapisan;
+  const literDibutuhkan = totalLuasDicat / dayaSebarPerLiter;
+
+  return { luasDindingBersih, totalLuasDicat, literDibutuhkan };
+}
+
+/* 10. KALKULATOR KEBUTUHAN KERAMIK */
+function calculateTile(panjangRuangan, lebarRuangan, ukuranKeramikCm, wastePercent) {
+  if (!CalcUtils.isValidNumber(panjangRuangan) || panjangRuangan <= 0) {
+    throw new Error("Panjang ruangan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(lebarRuangan) || lebarRuangan <= 0) {
+    throw new Error("Lebar ruangan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(ukuranKeramikCm) || ukuranKeramikCm <= 0) {
+    throw new Error("Ukuran sisi keramik harus lebih dari 0.");
+  }
+  wastePercent = CalcUtils.isValidNumber(wastePercent) ? wastePercent : 10;
+  if (wastePercent < 0) {
+    throw new Error("Persentase cadangan tidak boleh negatif.");
+  }
+
+  const luasRuangan = panjangRuangan * lebarRuangan;
+  const luasPerKeping = (ukuranKeramikCm / 100) * (ukuranKeramikCm / 100);
+  const kepingDibutuhkanBersih = luasRuangan / luasPerKeping;
+  const kepingDenganCadangan = Math.ceil(kepingDibutuhkanBersih * (1 + wastePercent / 100));
+
+  return { luasRuangan, luasPerKeping, kepingDenganCadangan };
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     CalcUtils,
@@ -195,5 +272,8 @@ if (typeof module !== "undefined" && module.exports) {
     calculateNetSalary,
     calculateTHR,
     calculateGPA,
+    calculateLandArea,
+    calculatePaint,
+    calculateTile,
   };
 }

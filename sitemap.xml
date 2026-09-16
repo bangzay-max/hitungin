@@ -10,6 +10,9 @@
   <url><loc>https://hitungin.id/calculators/thr.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://hitungin.id/calculators/ipk.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://hitungin.id/tools/qr-code.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hitungin.id/calculators/luas-tanah.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/cat.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/keramik.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://hitungin.id/about.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://hitungin.id/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://hitungin.id/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>

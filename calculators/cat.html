@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kalkulator Kebutuhan Cat Online Gratis — Hitung Liter Cat Tembok | Hitungin.id</title>
+<meta name="description" content="Hitung berapa liter cat yang dibutuhkan untuk mengecat ruangan berdasarkan luas dinding, bukaan, dan jumlah lapisan. Gratis dan cepat." />
+<link rel="canonical" href="https://hitungin.id/calculators/cat.html" />
+<link rel="icon" href="data:,">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: '#faf8ff',
+          'surface-dim': '#d2d9f4',
+          'surface-bright': '#faf8ff',
+          'surface-container-lowest': '#ffffff',
+          'surface-container-low': '#f2f3ff',
+          'surface-container': '#eaedff',
+          'surface-container-high': '#e2e7ff',
+          'surface-container-highest': '#dae2fd',
+          'on-surface': '#131b2e',
+          'on-surface-variant': '#464555',
+          'inverse-surface': '#283044',
+          'inverse-on-surface': '#eef0ff',
+          outline: '#777587',
+          'outline-variant': '#c7c4d8',
+          primary: '#3525cd',
+          'on-primary': '#ffffff',
+          'primary-container': '#4f46e5',
+          'on-primary-container': '#dad7ff',
+          'primary-fixed': '#e2dfff',
+          secondary: '#712ae2',
+          'on-secondary': '#ffffff',
+          'secondary-container': '#8a4cfc',
+          'on-secondary-container': '#fffbff',
+          tertiary: '#00505f',
+          'on-tertiary': '#ffffff',
+          'tertiary-container': '#006a7c',
+          error: '#ba1a1a',
+          'on-error': '#ffffff',
+          'error-container': '#ffdad6',
+          'on-error-container': '#93000a',
+          background: '#faf8ff',
+          'on-background': '#131b2e',
+        },
+        borderRadius: { sm: '0.25rem', DEFAULT: '0.5rem', md: '0.75rem', lg: '1rem', xl: '1.5rem', full: '9999px' },
+        spacing: { 'space-xs': '0.25rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem', gutter: '1.5rem', margin: '2rem' },
+        fontSize: {
+          'headline-lg': ['32px', { lineHeight: '40px', fontWeight: '600', letterSpacing: '-0.02em' }],
+          'headline-md': ['24px', { lineHeight: '32px', fontWeight: '600', letterSpacing: '-0.01em' }],
+          'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+          'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+          'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+          'body-sm': ['12px', { lineHeight: '16px', fontWeight: '400' }],
+          'label-lg': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+          'label-md': ['12px', { lineHeight: '16px', fontWeight: '500' }],
+          'label-sm': ['11px', { lineHeight: '14px', fontWeight: '500' }],
+        },
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Beranda","item":"https://hitungin.id/"},
+    {"@type":"ListItem","position":2,"name":"Rumah","item":"https://hitungin.id/tools.html#rumah"},
+    {"@type":"ListItem","position":3,"name":"Kalkulator Kebutuhan Cat","item":"https://hitungin.id/calculators/cat.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{"@type":"Question","name":"Berapa daya sebar cat yang umum?","acceptedAnswer":{"@type":"Answer","text":"Rata-rata cat tembok bisa menutupi sekitar 10-12 m² per liter untuk satu lapis, tapi selalu cek kemasan cat yang kamu pakai untuk angka pastinya."}},{"@type":"Question","name":"Kenapa perlu dikurangi luas pintu dan jendela?","acceptedAnswer":{"@type":"Answer","text":"Karena area pintu dan jendela tidak perlu dicat tembok, sehingga kebutuhan cat jadi lebih akurat."}},{"@type":"Question","name":"Berapa lapisan cat yang disarankan?","acceptedAnswer":{"@type":"Answer","text":"Umumnya 2 lapis untuk hasil warna yang rata dan menutup sempurna, terutama jika mengganti warna dasar yang jauh berbeda."}},{"@type":"Question","name":"Apakah kalkulator ini gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya, tool dapat digunakan gratis tanpa instalasi."}}]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md">
+
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-xl border-b border-surface-variant">
+  <div class="max-w-7xl mx-auto px-gutter h-16 md:h-20 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-space-sm">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-on-primary">
+        <span class="material-symbols-outlined text-[20px]">check_circle</span>
+      </span>
+      <span class="text-headline-sm text-on-surface tracking-tight">Hitungin.id</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-space-lg"><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/index.html">Beranda</a><a class="px-space-sm py-space-xs transition-colors bg-primary-fixed text-primary font-label-lg rounded-lg" href="/tools.html#keuangan">Kalkulator</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html#tools">Tools</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html">Panduan</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/about.html">Tentang</a></nav>
+    <div class="flex items-center gap-space-sm">
+      <a href="/tools.html" class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary text-on-primary text-label-lg hover:bg-primary-container transition-colors">Semua Tools</a>
+      <button id="mobile-menu-btn" aria-label="Buka menu" aria-expanded="false" class="md:hidden h-10 w-10 grid place-items-center rounded-full text-on-surface-variant hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-[22px]">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-variant bg-surface-container-lowest px-gutter py-space-md flex flex-col gap-1 text-body-md text-on-surface">
+    <a href="/index.html" class="py-2">Beranda</a><a href="/tools.html#keuangan" class="py-2">Kalkulator</a><a href="/tools.html#tools" class="py-2">Tools</a><a href="/tools.html" class="py-2">Panduan</a><a href="/about.html" class="py-2">Tentang</a>
+    <a href="/tools.html" class="mt-space-sm text-center rounded-lg bg-primary text-on-primary py-space-sm text-label-lg">Semua Tools</a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-8">
+  <nav aria-label="Breadcrumb" class="text-xs text-on-surface-variant mb-4">
+    <a href="/index.html" class="hover:text-primary">Beranda</a> ·
+    <a href="/tools.html#rumah" class="hover:text-primary">Rumah</a> ·
+    <span class="text-on-surface">Kalkulator Kebutuhan Cat</span>
+  </nav>
+
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-on-surface">Kalkulator Kebutuhan Cat</h1>
+  <p class="mt-2 text-on-surface-variant max-w-2xl">Hitung berapa liter cat yang kamu butuhkan untuk mengecat ruangan.</p>
+
+  <div class="mt-8 grid md:grid-cols-2 gap-6">
+    <section class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-5 sm:p-6">
+      <h2 class="text-sm font-semibold text-on-surface mb-4">Masukkan Data</h2>
+      <form id="form-cat" novalidate class="space-y-4">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="input-panjang" class="block text-sm font-medium text-on-surface mb-1.5">Panjang Ruangan (m)</label>
+            <input id="input-panjang" type="number" inputmode="decimal" placeholder="4" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+          </div>
+          <div>
+            <label for="input-lebar" class="block text-sm font-medium text-on-surface mb-1.5">Lebar Ruangan (m)</label>
+            <input id="input-lebar" type="number" inputmode="decimal" placeholder="5" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+          </div>
+        </div>
+        <div>
+          <label for="input-tinggi" class="block text-sm font-medium text-on-surface mb-1.5">Tinggi Dinding (m)</label>
+          <input id="input-tinggi" type="number" inputmode="decimal" placeholder="Contoh: 3" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+        </div>
+        <div>
+          <label for="input-bukaan" class="block text-sm font-medium text-on-surface mb-1.5">Luas Pintu & Jendela (m²) — opsional</label>
+          <input id="input-bukaan" type="number" inputmode="decimal" placeholder="Contoh: 3" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="input-lapisan" class="block text-sm font-medium text-on-surface mb-1.5">Jumlah Lapisan</label>
+            <input id="input-lapisan" type="number" inputmode="numeric" value="2" min="1" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+          </div>
+          <div>
+            <label for="input-daya-sebar" class="block text-sm font-medium text-on-surface mb-1.5">Daya Sebar (m²/liter)</label>
+            <input id="input-daya-sebar" type="number" inputmode="decimal" value="10" class="w-full h-12 rounded-xl border border-outline-variant px-4 text-sm focus:border-primary" />
+          </div>
+        </div>
+        <p id="form-error" class="text-xs text-error hidden"></p>
+        <button type="submit" class="btn-touch w-full rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-container transition-colors">Hitung Sekarang</button>
+      </form>
+      <p class="text-xs text-on-surface-variant mt-4">Daya sebar bisa berbeda tiap merek cat, cek kemasan untuk angka yang lebih akurat.</p>
+    </section>
+
+    <div>
+      <section id="result-section" class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-5 sm:p-6 hidden">
+        <p class="text-xs font-semibold text-on-surface-variant tracking-wide">KEBUTUHAN CAT</p>
+        <p id="result-liter" class="text-3xl font-extrabold text-primary mt-2"></p>
+        <div class="mt-4 space-y-1.5 text-sm text-on-surface-variant">
+          <div class="flex justify-between"><span>Luas dinding bersih</span><span id="result-dinding" class="font-medium text-on-surface"></span></div>
+          <div class="flex justify-between"><span>Total luas dicat (semua lapis)</span><span id="result-total" class="font-medium text-on-surface"></span></div>
+        </div>
+        <div class="flex gap-2 mt-6">
+          <button id="btn-reset" class="btn-touch flex-1 rounded-xl border border-outline-variant text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low">Hitung Lagi</button>
+          <button id="btn-copy" class="btn-touch flex-1 rounded-xl border border-outline-variant text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low">Salin Hasil</button>
+          <button id="btn-share" class="btn-touch flex-1 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:bg-primary-container">Bagikan</button>
+        </div>
+      </section>
+      <section id="empty-section" class="bg-surface-container-lowest rounded-2xl border border-dashed border-outline-variant p-8 flex flex-col items-center justify-center text-center text-on-surface-variant h-full">
+        <span class="material-symbols-outlined text-[32px] mb-2">format_paint</span>
+        <p class="text-sm">Hasil akan muncul di sini setelah kamu klik hitung.</p>
+      </section>
+    </div>
+  </div>
+
+  <article class="mt-12 max-w-3xl">
+    <h2 class="text-lg font-bold text-on-surface mb-3">Cara Menggunakan</h2>
+    <ol class="list-decimal list-inside space-y-1.5 text-sm text-on-surface-variant">
+      <li>Masukkan panjang, lebar, dan tinggi dinding ruangan.</li>
+      <li>Isi luas pintu dan jendela jika ada (opsional).</li>
+      <li>Tentukan jumlah lapisan cat dan daya sebar cat per liter.</li>
+      <li>Klik "Hitung Sekarang".</li>
+    </ol>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Rumus</h2>
+    <p class="text-sm text-on-surface-variant bg-surface-container-lowest border border-surface-variant rounded-xl p-4 font-mono">Luas Dinding = (2 × (Panjang + Lebar) × Tinggi) − Luas Bukaan<br/>Kebutuhan Liter = (Luas Dinding × Jumlah Lapisan) ÷ Daya Sebar</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Contoh Perhitungan</h2>
+    <p class="text-sm text-on-surface-variant">Ruangan 4m × 5m, tinggi 3m, bukaan 3m², 2 lapis, daya sebar 10 m²/liter → luas dinding bersih 51 m², total 102 m² dicat, butuh 10,2 liter cat.</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Tips</h2>
+    <p class="text-sm text-on-surface-variant">Beli cat sedikit lebih banyak dari hasil perhitungan untuk cadangan sulam warna di kemudian hari.</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">FAQ</h2>
+    <div class="space-y-4">
+      <div><p class="font-medium text-sm text-on-surface">Berapa daya sebar cat yang umum?</p><p class="text-sm text-on-surface-variant mt-1">Rata-rata cat tembok bisa menutupi sekitar 10-12 m² per liter untuk satu lapis, tapi selalu cek kemasan cat yang kamu pakai untuk angka pastinya.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Kenapa perlu dikurangi luas pintu dan jendela?</p><p class="text-sm text-on-surface-variant mt-1">Karena area pintu dan jendela tidak perlu dicat tembok, sehingga kebutuhan cat jadi lebih akurat.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Berapa lapisan cat yang disarankan?</p><p class="text-sm text-on-surface-variant mt-1">Umumnya 2 lapis untuk hasil warna yang rata dan menutup sempurna, terutama jika mengganti warna dasar yang jauh berbeda.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Apakah kalkulator ini gratis?</p><p class="text-sm text-on-surface-variant mt-1">Ya, tool dapat digunakan gratis tanpa instalasi.</p></div>
+    </div>
+  </article>
+
+  <section class="mt-12">
+    <h2 class="text-lg font-bold text-on-surface mb-4">Tools Terkait</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <a href="/calculators/keramik.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Keramik</a>
+      <a href="/calculators/luas-tanah.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Luas Tanah</a>
+      <a href="/calculators/persentase.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Persentase</a>
+      <a href="/calculators/diskon.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Diskon</a>
+    </div>
+  </section>
+</main>
+
+<footer class="w-full bg-surface-container-low border-t border-surface-variant py-space-xl mt-space-xl">
+  <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-xl">
+    <div>
+      <div class="flex items-center gap-space-sm mb-space-md">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-on-primary">
+          <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        </span>
+        <span class="text-headline-sm text-on-surface">Hitungin.id</span>
+      </div>
+      <p class="text-body-sm text-on-surface-variant">Platform kalkulator dan utility online terpercaya untuk memudahkan perhitungan finansial dan produktivitas harian Anda.</p>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Kategori</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#keuangan">Keuangan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#kendaraan">Kendaraan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#matematika">Matematika</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#tools">Tools & Utilitas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Perusahaan</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/about.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/privacy.html">Kebijakan Privasi</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/terms.html">Syarat & Ketentuan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Ikuti Kami</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">TikTok</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between text-body-sm text-on-surface-variant">
+    <p>© 2026 Hitungin.id. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculator.js"></script>
+<script>
+  const form = document.getElementById("form-cat");
+  const resultSection = document.getElementById("result-section");
+  const emptySection = document.getElementById("empty-section");
+  const formError = document.getElementById("form-error");
+  let lastResultText = "";
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const panjang = CalcUtils.toNumber(document.getElementById("input-panjang").value);
+    const lebar = CalcUtils.toNumber(document.getElementById("input-lebar").value);
+    const tinggi = CalcUtils.toNumber(document.getElementById("input-tinggi").value);
+    const bukaan = CalcUtils.toNumber(document.getElementById("input-bukaan").value || "0");
+    const lapisan = CalcUtils.toNumber(document.getElementById("input-lapisan").value);
+    const dayaSebar = CalcUtils.toNumber(document.getElementById("input-daya-sebar").value);
+
+    try {
+      const { luasDindingBersih, totalLuasDicat, literDibutuhkan } = calculatePaint(panjang, lebar, tinggi, bukaan, lapisan, dayaSebar);
+      formError.classList.add("hidden");
+
+      document.getElementById("result-liter").textContent = `${CalcUtils.number(literDibutuhkan, 1)} liter`;
+      document.getElementById("result-dinding").textContent = `${CalcUtils.number(luasDindingBersih)} m²`;
+      document.getElementById("result-total").textContent = `${CalcUtils.number(totalLuasDicat)} m²`;
+
+      lastResultText = `Butuh ${CalcUtils.number(literDibutuhkan, 1)} liter cat untuk ${CalcUtils.number(luasDindingBersih)} m² dinding`;
+
+      resultSection.classList.remove("hidden");
+      emptySection.classList.add("hidden");
+      trackToolUsage("cat");
+    } catch (err) {
+      formError.textContent = err.message;
+      formError.classList.remove("hidden");
+    }
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", () => {
+    form.reset();
+    document.getElementById("input-lapisan").value = "2";
+    document.getElementById("input-daya-sebar").value = "10";
+    resultSection.classList.add("hidden");
+    emptySection.classList.remove("hidden");
+    formError.classList.add("hidden");
+  });
+  document.getElementById("btn-copy").addEventListener("click", () => copyToClipboard(lastResultText));
+  document.getElementById("btn-share").addEventListener("click", () => shareResult("Hasil Kalkulator Kebutuhan Cat", lastResultText));
+</script>
+</body>
+</html>
