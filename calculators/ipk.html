@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kalkulator IPK Online Gratis — Hitung IPK per Semester | Hitungin.id</title>
+<meta name="description" content="Hitung IPK dari daftar mata kuliah, SKS, dan nilai dengan mudah. Tambah mata kuliah sebanyak yang kamu butuhkan. Gratis dan cepat." />
+<link rel="canonical" href="https://hitungin.id/calculators/ipk.html" />
+<link rel="icon" href="data:,">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: '#faf8ff',
+          'surface-dim': '#d2d9f4',
+          'surface-bright': '#faf8ff',
+          'surface-container-lowest': '#ffffff',
+          'surface-container-low': '#f2f3ff',
+          'surface-container': '#eaedff',
+          'surface-container-high': '#e2e7ff',
+          'surface-container-highest': '#dae2fd',
+          'on-surface': '#131b2e',
+          'on-surface-variant': '#464555',
+          'inverse-surface': '#283044',
+          'inverse-on-surface': '#eef0ff',
+          outline: '#777587',
+          'outline-variant': '#c7c4d8',
+          primary: '#3525cd',
+          'on-primary': '#ffffff',
+          'primary-container': '#4f46e5',
+          'on-primary-container': '#dad7ff',
+          'primary-fixed': '#e2dfff',
+          secondary: '#712ae2',
+          'on-secondary': '#ffffff',
+          'secondary-container': '#8a4cfc',
+          'on-secondary-container': '#fffbff',
+          tertiary: '#00505f',
+          'on-tertiary': '#ffffff',
+          'tertiary-container': '#006a7c',
+          error: '#ba1a1a',
+          'on-error': '#ffffff',
+          'error-container': '#ffdad6',
+          'on-error-container': '#93000a',
+          background: '#faf8ff',
+          'on-background': '#131b2e',
+        },
+        borderRadius: { sm: '0.25rem', DEFAULT: '0.5rem', md: '0.75rem', lg: '1rem', xl: '1.5rem', full: '9999px' },
+        spacing: { 'space-xs': '0.25rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem', gutter: '1.5rem', margin: '2rem' },
+        fontSize: {
+          'headline-lg': ['32px', { lineHeight: '40px', fontWeight: '600', letterSpacing: '-0.02em' }],
+          'headline-md': ['24px', { lineHeight: '32px', fontWeight: '600', letterSpacing: '-0.01em' }],
+          'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+          'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+          'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+          'body-sm': ['12px', { lineHeight: '16px', fontWeight: '400' }],
+          'label-lg': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+          'label-md': ['12px', { lineHeight: '16px', fontWeight: '500' }],
+          'label-sm': ['11px', { lineHeight: '14px', fontWeight: '500' }],
+        },
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Beranda","item":"https://hitungin.id/"},
+    {"@type":"ListItem","position":2,"name":"Pendidikan","item":"https://hitungin.id/tools.html#pendidikan"},
+    {"@type":"ListItem","position":3,"name":"Kalkulator IPK","item":"https://hitungin.id/calculators/ipk.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Bagaimana rumus menghitung IPK?","acceptedAnswer":{"@type":"Answer","text":"IPK dihitung dengan total mutu (SKS dikali bobot nilai) dibagi total SKS."}},
+    {"@type":"Question","name":"Apakah skala nilai bisa disesuaikan?","acceptedAnswer":{"@type":"Answer","text":"Kalkulator ini menggunakan skala 4.0 yang umum dipakai perguruan tinggi di Indonesia."}},
+    {"@type":"Question","name":"Berapa banyak mata kuliah yang bisa ditambahkan?","acceptedAnswer":{"@type":"Answer","text":"Kamu bisa menambahkan mata kuliah sebanyak yang dibutuhkan sesuai jumlah mata kuliah dalam satu semester."}},
+    {"@type":"Question","name":"Apakah kalkulator ini gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya, tool dapat digunakan gratis tanpa instalasi."}}
+  ]
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md">
+
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-xl border-b border-surface-variant">
+  <div class="max-w-7xl mx-auto px-gutter h-16 md:h-20 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-space-sm">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-on-primary">
+        <span class="material-symbols-outlined text-[20px]">check_circle</span>
+      </span>
+      <span class="text-headline-sm text-on-surface tracking-tight">Hitungin.id</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-space-lg"><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/index.html">Beranda</a><a class="px-space-sm py-space-xs transition-colors bg-primary-fixed text-primary font-label-lg rounded-lg" href="/tools.html#keuangan">Kalkulator</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html#tools">Tools</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html">Panduan</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/about.html">Tentang</a></nav>
+    <div class="flex items-center gap-space-sm">
+      <a href="/tools.html" class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary text-on-primary text-label-lg hover:bg-primary-container transition-colors">Semua Tools</a>
+      <button id="mobile-menu-btn" aria-label="Buka menu" aria-expanded="false" class="md:hidden h-10 w-10 grid place-items-center rounded-full text-on-surface-variant hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-[22px]">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-variant bg-surface-container-lowest px-gutter py-space-md flex flex-col gap-1 text-body-md text-on-surface">
+    <a href="/index.html" class="py-2">Beranda</a><a href="/tools.html#keuangan" class="py-2">Kalkulator</a><a href="/tools.html#tools" class="py-2">Tools</a><a href="/tools.html" class="py-2">Panduan</a><a href="/about.html" class="py-2">Tentang</a>
+    <a href="/tools.html" class="mt-space-sm text-center rounded-lg bg-primary text-on-primary py-space-sm text-label-lg">Semua Tools</a>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-8">
+  <nav aria-label="Breadcrumb" class="text-xs text-on-surface-variant mb-4">
+    <a href="/index.html" class="hover:text-primary">Beranda</a> ·
+    <a href="/tools.html#pendidikan" class="hover:text-primary">Pendidikan</a> ·
+    <span class="text-on-surface">Kalkulator IPK</span>
+  </nav>
+
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-on-surface">Kalkulator IPK</h1>
+  <p class="mt-2 text-on-surface-variant max-w-2xl">Hitung IPK dari daftar mata kuliah, SKS, dan nilai. Tambahkan mata kuliah sebanyak yang kamu butuhkan.</p>
+
+  <div class="mt-8 grid md:grid-cols-2 gap-6 items-start">
+    <section class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-5 sm:p-6">
+      <h2 class="text-sm font-semibold text-on-surface mb-4">Daftar Mata Kuliah</h2>
+      <div id="mk-list" class="space-y-3"></div>
+      <button id="btn-tambah" type="button" class="btn-touch w-full mt-3 rounded-xl border-2 border-dashed border-outline-variant text-sm font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+        + Tambah Mata Kuliah
+      </button>
+      <p id="form-error" class="text-xs text-error mt-3 hidden"></p>
+      <button id="btn-hitung" type="button" class="btn-touch w-full mt-4 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-container transition-colors">Hitung IPK</button>
+    </section>
+
+    <div>
+      <section id="result-section" class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-5 sm:p-6 hidden">
+        <p class="text-xs font-semibold text-on-surface-variant tracking-wide">IPK KAMU</p>
+        <p id="result-ipk" class="text-3xl font-extrabold text-primary mt-2"></p>
+        <div class="mt-4 space-y-1.5 text-sm text-on-surface-variant">
+          <div class="flex justify-between"><span>Total SKS</span><span id="result-sks" class="font-medium text-on-surface"></span></div>
+          <div class="flex justify-between"><span>Total Mutu</span><span id="result-mutu" class="font-medium text-on-surface"></span></div>
+        </div>
+        <div class="flex gap-2 mt-6">
+          <button id="btn-reset" class="btn-touch flex-1 rounded-xl border border-outline-variant text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low">Hitung Lagi</button>
+          <button id="btn-copy" class="btn-touch flex-1 rounded-xl border border-outline-variant text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low">Salin Hasil</button>
+          <button id="btn-share" class="btn-touch flex-1 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:bg-primary-container">Bagikan</button>
+        </div>
+      </section>
+      <section id="empty-section" class="bg-surface-container-lowest rounded-2xl border border-dashed border-outline-variant p-8 flex flex-col items-center justify-center text-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[32px] mb-2">school</span>
+        <p class="text-sm">Isi minimal 1 mata kuliah lalu klik "Hitung IPK".</p>
+      </section>
+    </div>
+  </div>
+
+  <article class="mt-12 max-w-3xl">
+    <h2 class="text-lg font-bold text-on-surface mb-3">Cara Menggunakan</h2>
+    <ol class="list-decimal list-inside space-y-1.5 text-sm text-on-surface-variant">
+      <li>Isi nama mata kuliah (opsional), SKS, dan nilai huruf.</li>
+      <li>Klik "+ Tambah Mata Kuliah" untuk menambah baris baru.</li>
+      <li>Ulangi untuk semua mata kuliah dalam satu semester.</li>
+      <li>Klik "Hitung IPK" untuk melihat hasilnya.</li>
+    </ol>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Rumus</h2>
+    <p class="text-sm text-on-surface-variant bg-surface-container-lowest border border-surface-variant rounded-xl p-4 font-mono">IPK = Total Mutu ÷ Total SKS<br/>Mutu per mata kuliah = SKS × Bobot Nilai</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Contoh Perhitungan</h2>
+    <p class="text-sm text-on-surface-variant">3 SKS nilai A (4.0) dan 2 SKS nilai B (3.0) → total mutu = (3×4.0)+(2×3.0) = 18, total SKS = 5, IPK = 18÷5 = 3.6.</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">Tips</h2>
+    <p class="text-sm text-on-surface-variant">Simpan hasil setiap semester untuk memantau perkembangan IPK kumulatifmu dari waktu ke waktu.</p>
+    <h2 class="text-lg font-bold text-on-surface mt-8 mb-3">FAQ</h2>
+    <div class="space-y-4">
+      <div><p class="font-medium text-sm text-on-surface">Bagaimana rumus menghitung IPK?</p><p class="text-sm text-on-surface-variant mt-1">IPK dihitung dengan total mutu dibagi total SKS.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Apakah skala nilai bisa disesuaikan?</p><p class="text-sm text-on-surface-variant mt-1">Kalkulator ini menggunakan skala 4.0 yang umum dipakai perguruan tinggi di Indonesia.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Berapa banyak mata kuliah yang bisa ditambahkan?</p><p class="text-sm text-on-surface-variant mt-1">Sebanyak yang kamu butuhkan, tidak dibatasi.</p></div>
+      <div><p class="font-medium text-sm text-on-surface">Apakah kalkulator ini gratis?</p><p class="text-sm text-on-surface-variant mt-1">Ya, tool dapat digunakan gratis tanpa instalasi.</p></div>
+    </div>
+  </article>
+
+  <section class="mt-12">
+    <h2 class="text-lg font-bold text-on-surface mb-4">Tools Terkait</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <a href="/calculators/persentase.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Persentase</a>
+      <a href="/calculators/gaji.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Gaji Bersih</a>
+      <a href="/calculators/diskon.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">Kalkulator Diskon</a>
+      <a href="/tools/qr-code.html" class="bg-surface-container-lowest rounded-xl border border-surface-variant p-4 hover:border-primary text-sm font-medium">QR Code Generator</a>
+    </div>
+  </section>
+</main>
+
+<footer class="w-full bg-surface-container-low border-t border-surface-variant py-space-xl mt-space-xl">
+  <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-xl">
+    <div>
+      <div class="flex items-center gap-space-sm mb-space-md">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-on-primary">
+          <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        </span>
+        <span class="text-headline-sm text-on-surface">Hitungin.id</span>
+      </div>
+      <p class="text-body-sm text-on-surface-variant">Platform kalkulator dan utility online terpercaya untuk memudahkan perhitungan finansial dan produktivitas harian Anda.</p>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Kategori</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#keuangan">Keuangan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#kendaraan">Kendaraan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#matematika">Matematika</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#tools">Tools & Utilitas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Perusahaan</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/about.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/privacy.html">Kebijakan Privasi</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/terms.html">Syarat & Ketentuan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Ikuti Kami</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">TikTok</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between text-body-sm text-on-surface-variant">
+    <p>© 2026 Hitungin.id. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/calculator.js"></script>
+<script>
+  const mkList = document.getElementById("mk-list");
+  const resultSection = document.getElementById("result-section");
+  const emptySection = document.getElementById("empty-section");
+  const formError = document.getElementById("form-error");
+  let lastResultText = "";
+  let rowCount = 0;
+
+  const NILAI_OPTIONS = ["A", "A-", "B+", "B", "B-", "C+", "C", "D", "E"];
+
+  function addRow(nama = "", sks = "", nilai = "A") {
+    rowCount++;
+    const rowId = `mk-row-${rowCount}`;
+    const row = document.createElement("div");
+    row.id = rowId;
+    row.className = "flex gap-2 items-start";
+    row.innerHTML = `
+      <input type="text" placeholder="Nama MK (opsional)" value="${nama}" class="mk-nama flex-[2] h-11 rounded-lg border border-outline-variant px-3 text-sm focus:border-primary" />
+      <input type="number" placeholder="SKS" value="${sks}" min="1" class="mk-sks w-16 h-11 rounded-lg border border-outline-variant px-2 text-sm text-center focus:border-primary" />
+      <select class="mk-nilai w-20 h-11 rounded-lg border border-outline-variant px-1 text-sm focus:border-primary">
+        ${NILAI_OPTIONS.map((n) => `<option value="${n}" ${n === nilai ? "selected" : ""}>${n}</option>`).join("")}
+      </select>
+      <button type="button" class="btn-hapus h-11 w-11 shrink-0 grid place-items-center rounded-lg text-on-surface-variant hover:text-error hover:bg-red-50" aria-label="Hapus mata kuliah">
+        <span class="material-symbols-outlined text-[16px]">delete</span>
+      </button>
+    `;
+    mkList.appendChild(row);
+    row.querySelector(".btn-hapus").addEventListener("click", () => {
+      if (mkList.children.length > 1) row.remove();
+      else showToast("Minimal 1 mata kuliah harus diisi", "error");
+    });
+  }
+
+  addRow();
+  addRow();
+
+  document.getElementById("btn-tambah").addEventListener("click", () => addRow());
+
+  document.getElementById("btn-hitung").addEventListener("click", () => {
+    const rows = [...mkList.children];
+    const mataKuliahList = rows.map((row) => ({
+      sks: row.querySelector(".mk-sks").value,
+      nilai: row.querySelector(".mk-nilai").value,
+    }));
+
+    try {
+      const { totalSKS, totalMutu, ipk } = calculateGPA(mataKuliahList);
+      formError.classList.add("hidden");
+
+      document.getElementById("result-ipk").textContent = CalcUtils.number(ipk, 2);
+      document.getElementById("result-sks").textContent = totalSKS;
+      document.getElementById("result-mutu").textContent = CalcUtils.number(totalMutu, 2);
+
+      lastResultText = `IPK: ${CalcUtils.number(ipk, 2)} (Total SKS: ${totalSKS})`;
+
+      resultSection.classList.remove("hidden");
+      emptySection.classList.add("hidden");
+      trackToolUsage("ipk");
+    } catch (err) {
+      formError.textContent = err.message;
+      formError.classList.remove("hidden");
+    }
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", () => {
+    mkList.innerHTML = "";
+    rowCount = 0;
+    addRow();
+    addRow();
+    resultSection.classList.add("hidden");
+    emptySection.classList.remove("hidden");
+    formError.classList.add("hidden");
+  });
+  document.getElementById("btn-copy").addEventListener("click", () => copyToClipboard(lastResultText));
+  document.getElementById("btn-share").addEventListener("click", () => shareResult("Hasil Kalkulator IPK", lastResultText));
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hitungin.id — Kalkulator dan Tools Online Gratis untuk Kebutuhan Sehari-hari</title>
+<meta name="description" content="Kumpulan kalkulator dan tools online gratis: cicilan, gaji, BBM, diskon, IPK, QR Code, dan lainnya. Cepat, mudah, tanpa perlu instal aplikasi." />
+<link rel="canonical" href="https://hitungin.id/" />
+<meta property="og:title" content="Hitungin.id — Tools sederhana untuk kebutuhan sehari-hari" />
+<meta property="og:description" content="Kalkulator dan tools online gratis untuk membantu pekerjaan sehari-hari dengan cepat dan praktis." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:,">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: '#faf8ff',
+          'surface-dim': '#d2d9f4',
+          'surface-bright': '#faf8ff',
+          'surface-container-lowest': '#ffffff',
+          'surface-container-low': '#f2f3ff',
+          'surface-container': '#eaedff',
+          'surface-container-high': '#e2e7ff',
+          'surface-container-highest': '#dae2fd',
+          'on-surface': '#131b2e',
+          'on-surface-variant': '#464555',
+          'inverse-surface': '#283044',
+          'inverse-on-surface': '#eef0ff',
+          outline: '#777587',
+          'outline-variant': '#c7c4d8',
+          primary: '#3525cd',
+          'on-primary': '#ffffff',
+          'primary-container': '#4f46e5',
+          'on-primary-container': '#dad7ff',
+          'primary-fixed': '#e2dfff',
+          secondary: '#712ae2',
+          'on-secondary': '#ffffff',
+          'secondary-container': '#8a4cfc',
+          'on-secondary-container': '#fffbff',
+          tertiary: '#00505f',
+          'on-tertiary': '#ffffff',
+          'tertiary-container': '#006a7c',
+          error: '#ba1a1a',
+          'on-error': '#ffffff',
+          'error-container': '#ffdad6',
+          'on-error-container': '#93000a',
+          background: '#faf8ff',
+          'on-background': '#131b2e',
+        },
+        borderRadius: { sm: '0.25rem', DEFAULT: '0.5rem', md: '0.75rem', lg: '1rem', xl: '1.5rem', full: '9999px' },
+        spacing: { 'space-xs': '0.25rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem', gutter: '1.5rem', margin: '2rem' },
+        fontSize: {
+          'headline-lg': ['32px', { lineHeight: '40px', fontWeight: '600', letterSpacing: '-0.02em' }],
+          'headline-md': ['24px', { lineHeight: '32px', fontWeight: '600', letterSpacing: '-0.01em' }],
+          'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+          'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+          'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+          'body-sm': ['12px', { lineHeight: '16px', fontWeight: '400' }],
+          'label-lg': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+          'label-md': ['12px', { lineHeight: '16px', fontWeight: '500' }],
+          'label-sm': ['11px', { lineHeight: '14px', fontWeight: '500' }],
+        },
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Hitungin.id",
+  "url": "https://hitungin.id/",
+  "description": "Portal kalkulator dan tools online gratis untuk kebutuhan sehari-hari masyarakat Indonesia."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hitungin.id",
+  "url": "https://hitungin.id/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hitungin.id/tools.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-xl border-b border-surface-variant">
+  <div class="max-w-7xl mx-auto px-gutter h-16 md:h-20 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-space-sm">
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-on-primary">
+        <span class="material-symbols-outlined text-[20px]">check_circle</span>
+      </span>
+      <span class="text-headline-sm text-on-surface tracking-tight">Hitungin.id</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-space-lg"><a class="px-space-sm py-space-xs transition-colors bg-primary-fixed text-primary font-label-lg rounded-lg" href="/index.html">Beranda</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html#keuangan">Kalkulator</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html#tools">Tools</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/tools.html">Panduan</a><a class="text-body-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors" href="/about.html">Tentang</a></nav>
+    <div class="flex items-center gap-space-sm">
+      <a href="/tools.html" class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-primary text-on-primary text-label-lg hover:bg-primary-container transition-colors">Semua Tools</a>
+      <button id="mobile-menu-btn" aria-label="Buka menu" aria-expanded="false" class="md:hidden h-10 w-10 grid place-items-center rounded-full text-on-surface-variant hover:bg-surface-container-low">
+        <span class="material-symbols-outlined text-[22px]">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-variant bg-surface-container-lowest px-gutter py-space-md flex flex-col gap-1 text-body-md text-on-surface">
+    <a href="/index.html" class="py-2">Beranda</a><a href="/tools.html#keuangan" class="py-2">Kalkulator</a><a href="/tools.html#tools" class="py-2">Tools</a><a href="/tools.html" class="py-2">Panduan</a><a href="/about.html" class="py-2">Tentang</a>
+    <a href="/tools.html" class="mt-space-sm text-center rounded-lg bg-primary text-on-primary py-space-sm text-label-lg">Semua Tools</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-space-xl pb-space-xl px-gutter max-w-7xl mx-auto w-full flex flex-col items-center text-center overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-primary text-label-md mb-space-md shadow-sm">
+    <span class="material-symbols-outlined text-[16px]">bolt</span>
+    <span>Kalkulator &amp; tools gratis untuk kebutuhan harian</span>
+  </div>
+  <h1 class="text-headline-lg text-on-surface max-w-2xl tracking-tight mb-space-md">
+    Hitung apa saja, jadi lebih mudah.
+  </h1>
+  <p class="text-body-lg text-on-surface-variant max-w-xl mb-space-xl">
+    Kumpulan kalkulator dan tools online gratis untuk membantu pekerjaan sehari-hari dengan cepat dan praktis.
+  </p>
+
+  <div class="w-full max-w-2xl relative text-left">
+    <div class="bg-surface-container-lowest p-2 rounded-2xl shadow-xl shadow-primary/5 flex items-center gap-space-sm transition-all focus-within:ring-2 focus-within:ring-primary/20">
+      <div class="pl-space-md text-on-surface-variant flex items-center justify-center">
+        <span class="material-symbols-outlined text-[22px]">search</span>
+      </div>
+      <input id="search-input" type="text" placeholder="Cari kalkulator atau tools..." aria-label="Cari kalkulator atau tools" class="w-full py-space-sm bg-transparent text-on-surface placeholder:text-outline focus:outline-none text-body-lg" />
+      <button type="button" class="hidden sm:inline-flex px-space-lg py-space-md bg-primary text-on-primary rounded-xl text-label-lg hover:bg-primary-container transition-all shadow-sm">Cari Cepat</button>
+    </div>
+    <div id="search-results" class="hidden absolute mt-2 w-full bg-surface-container-lowest rounded-2xl shadow-lg border border-surface-variant p-2 max-h-80 overflow-y-auto z-30"></div>
+  </div>
+
+  <div class="mt-space-lg flex flex-wrap items-center justify-center gap-space-sm max-w-3xl">
+    <span class="text-body-sm text-on-surface-variant mr-space-xs">Populer:</span>
+    <a href="/tools.html#keuangan" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Keuangan</a>
+    <a href="/tools.html#kendaraan" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Kendaraan</a>
+    <a href="/tools.html#matematika" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Matematika</a>
+    <a href="/tools.html#pendidikan" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Pendidikan</a>
+    <a href="/tools.html#rumah" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Rumah</a>
+    <a href="/tools.html#tools" class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-all text-body-sm shadow-sm">Tools</a>
+  </div>
+</section>
+
+<!-- FEATURED TOOLS -->
+<section class="py-space-xl px-gutter max-w-7xl mx-auto w-full">
+  <div class="flex items-end justify-between mb-space-lg">
+    <div>
+      <span class="text-label-md text-primary tracking-wider uppercase">Paling sering digunakan</span>
+      <h2 class="text-headline-md text-on-surface mt-space-xs">Tools Populer</h2>
+    </div>
+    <a href="/tools.html" class="hidden sm:inline-flex items-center gap-space-xs text-label-lg text-primary hover:text-primary-container transition-colors">
+      Lihat Semua Tools <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </div>
+  <div id="popular-tools-grid" class="grid grid-cols-2 md:grid-cols-4 gap-space-md"></div>
+</section>
+
+<!-- CATEGORY SECTION -->
+<section class="py-space-xl bg-surface-container-low w-full">
+  <div class="max-w-7xl mx-auto px-gutter">
+    <div class="text-center max-w-2xl mx-auto mb-space-xl">
+      <span class="text-label-md text-primary tracking-wider uppercase">Jelajahi Berdasarkan Kategori</span>
+      <h2 class="text-headline-lg text-on-surface mt-space-xs">Temukan tools sesuai kebutuhanmu</h2>
+      <p class="text-body-md text-on-surface-variant mt-space-sm">Kalkulator dikelompokkan per kategori supaya lebih gampang dicari.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+      <a href="/tools.html#keuangan" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">account_balance</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Keuangan</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">4 Tools</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">Cicilan, gaji bersih, THR, dan diskon.</p>
+        </div>
+      </a>
+      <a href="/tools.html#kendaraan" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">directions_car</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Kendaraan</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">1 Tool</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">Hitung kebutuhan dan biaya BBM perjalanan.</p>
+        </div>
+      </a>
+      <a href="/tools.html#matematika" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">calculate</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Matematika</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">1 Tool</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">Hitung persentase dengan cepat.</p>
+        </div>
+      </a>
+      <a href="/tools.html#pendidikan" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">school</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Pendidikan</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">1 Tool</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">Kalkulator IPK dari SKS dan nilai.</p>
+        </div>
+      </a>
+      <a href="/tools.html#rumah" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group opacity-70">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">other_houses</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Rumah</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">Segera hadir</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">Kebutuhan cat, keramik, dan material.</p>
+        </div>
+      </a>
+      <a href="/tools.html#tools" class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex items-start gap-space-md group">
+        <span class="w-14 h-14 rounded-2xl bg-primary-fixed shrink-0 flex items-center justify-center text-primary group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[28px]">construction</span></span>
+        <div>
+          <div class="flex items-center justify-between mb-space-xs">
+            <h3 class="text-headline-sm text-on-surface group-hover:text-primary transition-colors">Tools & Utilitas</h3>
+            <span class="text-body-sm text-on-surface-variant px-space-sm py-xs bg-surface-container-low rounded-full">1 Tool</span>
+          </div>
+          <p class="text-body-sm text-on-surface-variant">QR Code Generator untuk teks, URL, WhatsApp.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="py-space-xl max-w-7xl mx-auto px-gutter w-full">
+  <div class="text-center max-w-2xl mx-auto mb-space-xl">
+    <span class="text-label-md text-primary tracking-wider uppercase">Keunggulan Kami</span>
+    <h2 class="text-headline-lg text-on-surface mt-space-xs">Dibuat untuk mempermudah aktivitas sehari-hari</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm text-center">
+      <div class="w-14 h-14 rounded-full bg-primary-fixed mx-auto flex items-center justify-center text-primary mb-space-md shadow-sm"><span class="material-symbols-outlined text-[26px]">bolt</span></div>
+      <h3 class="text-headline-sm text-on-surface mb-space-xs">Cepat</h3>
+      <p class="text-body-sm text-on-surface-variant">Hasil kalkulasi langsung muncul begitu kamu masukkan data.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm text-center">
+      <div class="w-14 h-14 rounded-full bg-primary-fixed mx-auto flex items-center justify-center text-primary mb-space-md shadow-sm"><span class="material-symbols-outlined text-[26px]">devices</span></div>
+      <h3 class="text-headline-sm text-on-surface mb-space-xs">Mobile Friendly</h3>
+      <p class="text-body-sm text-on-surface-variant">Nyaman dipakai di HP, tablet, maupun desktop.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm text-center">
+      <div class="w-14 h-14 rounded-full bg-primary-fixed mx-auto flex items-center justify-center text-primary mb-space-md shadow-sm"><span class="material-symbols-outlined text-[26px]">redeem</span></div>
+      <h3 class="text-headline-sm text-on-surface mb-space-xs">Gratis</h3>
+      <p class="text-body-sm text-on-surface-variant">Semua kalkulator bisa dipakai gratis tanpa akun.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm text-center">
+      <div class="w-14 h-14 rounded-full bg-primary-fixed mx-auto flex items-center justify-center text-primary mb-space-md shadow-sm"><span class="material-symbols-outlined text-[26px]">verified</span></div>
+      <h3 class="text-headline-sm text-on-surface mb-space-xs">Praktis</h3>
+      <p class="text-body-sm text-on-surface-variant">Tanpa instal aplikasi, langsung dipakai dari browser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI TEASER -->
+<section class="py-space-md max-w-7xl mx-auto px-gutter w-full">
+  <div class="bg-gradient-to-r from-primary to-secondary text-on-primary rounded-2xl p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-xl relative overflow-hidden">
+    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="max-w-xl text-center md:text-left">
+      <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-white/20 text-on-primary text-label-md mb-space-sm backdrop-blur-md">
+        <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+        <span>Segera hadir</span>
+      </div>
+      <h3 class="text-headline-md text-on-primary mb-space-xs">Bingung harus pakai kalkulator yang mana?</h3>
+      <p class="text-body-lg text-on-primary/90">Cukup ceritakan kebutuhanmu, Hitungin AI akan bantu arahkan ke kalkulator yang tepat.</p>
+    </div>
+    <button disabled class="px-space-xl py-space-md bg-surface text-on-surface rounded-xl text-label-lg shadow-md flex items-center gap-space-sm shrink-0 opacity-90 cursor-not-allowed">
+      <span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>
+      Tanya Hitungin AI
+    </button>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-space-xl max-w-4xl mx-auto px-gutter w-full">
+  <div class="text-center mb-space-xl">
+    <span class="text-label-md text-primary tracking-wider uppercase">Pertanyaan Umum</span>
+    <h2 class="text-headline-lg text-on-surface mt-space-xs">FAQ Hitungin.id</h2>
+  </div>
+  <div class="space-y-space-md">
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+      <h3 class="text-headline-sm text-on-surface">Apakah semua kalkulator di Hitungin.id gratis?</h3>
+      <p class="text-body-md text-on-surface-variant mt-space-sm">Ya, 100% gratis tanpa biaya tersembunyi. Kamu bisa pakai semua tools kapan saja.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+      <h3 class="text-headline-sm text-on-surface">Apakah data pribadi saya disimpan di server?</h3>
+      <p class="text-body-md text-on-surface-variant mt-space-sm">Tidak. Semua proses perhitungan dilakukan langsung di browser kamu (client-side).</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+      <h3 class="text-headline-sm text-on-surface">Apakah hasil perhitungannya akurat?</h3>
+      <p class="text-body-md text-on-surface-variant mt-space-sm">Setiap kalkulator memakai rumus standar yang umum dipakai, dan hasilnya bersifat estimasi untuk kebutuhan finansial.</p>
+    </div>
+    <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+      <h3 class="text-headline-sm text-on-surface">Bagaimana cara mengusulkan kalkulator baru?</h3>
+      <p class="text-body-md text-on-surface-variant mt-space-sm">Kirim masukan lewat halaman <a href="/about.html" class="text-primary hover:underline">Tentang</a>. Kami selalu terbuka untuk pengembangan fitur baru.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AD PLACEHOLDER -->
+<section class="max-w-7xl mx-auto px-gutter py-space-lg">
+  <div class="mx-auto w-full max-w-[728px] h-[90px] hidden sm:flex items-center justify-center rounded-xl border border-dashed border-outline-variant text-on-surface-variant text-body-sm">
+    ADVERTISEMENT · 728×90
+  </div>
+  <div class="mx-auto w-full max-w-[320px] h-[100px] sm:hidden flex items-center justify-center rounded-xl border border-dashed border-outline-variant text-on-surface-variant text-body-sm">
+    ADVERTISEMENT · 320×100
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low border-t border-surface-variant py-space-xl mt-space-xl">
+  <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-xl">
+    <div>
+      <div class="flex items-center gap-space-sm mb-space-md">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-on-primary">
+          <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        </span>
+        <span class="text-headline-sm text-on-surface">Hitungin.id</span>
+      </div>
+      <p class="text-body-sm text-on-surface-variant">Platform kalkulator dan utility online terpercaya untuk memudahkan perhitungan finansial dan produktivitas harian Anda.</p>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Kategori</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#keuangan">Keuangan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#kendaraan">Kendaraan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#matematika">Matematika</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/tools.html#tools">Tools & Utilitas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Perusahaan</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="/about.html">Tentang Kami</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/privacy.html">Kebijakan Privasi</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/terms.html">Syarat & Ketentuan</a></li>
+        <li><a class="hover:text-primary transition-colors" href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-label-lg text-on-surface mb-space-md">Ikuti Kami</h4>
+      <ul class="space-y-space-xs text-body-sm text-on-surface-variant">
+        <li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">TikTok</a></li>
+        <li><a class="hover:text-primary transition-colors" href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between text-body-sm text-on-surface-variant">
+    <p>© 2026 Hitungin.id. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  const grid = document.getElementById("popular-tools-grid");
+  const popular = TOOLS_DATA.filter(t => t.popular);
+  grid.innerHTML = popular.map(t => `
+    <a href="${t.url}" class="group bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-space-sm sm:mb-space-md">
+          <span class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[20px] sm:text-[24px]">${t.icon}</span>
+          </span>
+          <span class="hidden sm:inline-block px-space-sm py-xs rounded-full bg-surface-container-low text-on-surface-variant text-label-sm">${t.category}</span>
+        </div>
+        <h3 class="text-label-lg sm:text-headline-sm text-on-surface mb-space-xs group-hover:text-primary transition-colors">${t.name}</h3>
+        <p class="hidden sm:block text-body-sm text-on-surface-variant">${t.description}</p>
+      </div>
+      <div class="pt-space-sm sm:pt-space-md flex items-center justify-end">
+        <span class="inline-flex items-center gap-space-xs text-label-md text-primary group-hover:translate-x-1 transition-transform">Gunakan <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+      </div>
+    </a>
+  `).join("");
+</script>
+</body>
+</html>
