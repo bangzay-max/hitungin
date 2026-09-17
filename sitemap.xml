@@ -17,4 +17,29 @@
   <url><loc>https://hitungin.id/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://hitungin.id/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://hitungin.id/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://hitungin.id/calculators/kpr.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/bmi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/bmr.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/tdee.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/kalori.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/rata-rata.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/pecahan.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/pangkat.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/akar.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/rasio.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/perbandingan.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/lingkaran.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/segitiga.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/persegi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/persegi-panjang.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/volume-kubus.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/volume-balok.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/volume-tabung.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/kecepatan.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/jarak.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/bep.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/roi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/roas.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/profit.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hitungin.id/calculators/hpp.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

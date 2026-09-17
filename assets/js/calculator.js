@@ -262,6 +262,313 @@ function calculateTile(panjangRuangan, lebarRuangan, ukuranKeramikCm, wastePerce
   return { luasRuangan, luasPerKeping, kepingDenganCadangan };
 }
 
+/* 11. KALKULATOR KPR (metode anuitas) */
+function calculateKPR(hargaRumah, dp, bungaTahunPersen, tenorTahun) {
+  if (!CalcUtils.isValidNumber(hargaRumah) || hargaRumah <= 0) {
+    throw new Error("Harga rumah harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(dp) || dp < 0) {
+    throw new Error("DP tidak boleh negatif.");
+  }
+  if (dp >= hargaRumah) {
+    throw new Error("DP tidak boleh lebih besar atau sama dengan harga rumah.");
+  }
+  if (!CalcUtils.isValidNumber(bungaTahunPersen) || bungaTahunPersen < 0) {
+    throw new Error("Bunga tidak boleh negatif.");
+  }
+  if (!CalcUtils.isValidNumber(tenorTahun) || tenorTahun <= 0) {
+    throw new Error("Tenor harus lebih dari 0 tahun.");
+  }
+
+  const pokokPinjaman = hargaRumah - dp;
+  const tenorBulan = tenorTahun * 12;
+  const rateBulanan = bungaTahunPersen / 100 / 12;
+
+  let cicilanPerBulan;
+  if (rateBulanan === 0) {
+    cicilanPerBulan = pokokPinjaman / tenorBulan;
+  } else {
+    const factor = Math.pow(1 + rateBulanan, tenorBulan);
+    cicilanPerBulan = (pokokPinjaman * rateBulanan * factor) / (factor - 1);
+  }
+  const totalPembayaran = cicilanPerBulan * tenorBulan;
+  const totalBunga = totalPembayaran - pokokPinjaman;
+
+  return { pokokPinjaman, tenorBulan, cicilanPerBulan, totalBunga, totalPembayaran };
+}
+
+/* 12. KALKULATOR BMI */
+function calculateBMI(beratKg, tinggiCm) {
+  if (!CalcUtils.isValidNumber(beratKg) || beratKg <= 0) {
+    throw new Error("Berat badan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(tinggiCm) || tinggiCm <= 0) {
+    throw new Error("Tinggi badan harus lebih dari 0.");
+  }
+  const tinggiM = tinggiCm / 100;
+  const bmi = beratKg / (tinggiM * tinggiM);
+  let kategori;
+  if (bmi < 18.5) kategori = "Berat badan kurang";
+  else if (bmi < 25) kategori = "Berat badan normal";
+  else if (bmi < 30) kategori = "Kelebihan berat badan";
+  else kategori = "Obesitas";
+  return { bmi, kategori };
+}
+
+/* 13. KALKULATOR BMR (Mifflin-St Jeor) */
+function calculateBMR(beratKg, tinggiCm, umur, gender) {
+  if (!CalcUtils.isValidNumber(beratKg) || beratKg <= 0) {
+    throw new Error("Berat badan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(tinggiCm) || tinggiCm <= 0) {
+    throw new Error("Tinggi badan harus lebih dari 0.");
+  }
+  if (!CalcUtils.isValidNumber(umur) || umur <= 0) {
+    throw new Error("Umur harus lebih dari 0.");
+  }
+  if (gender !== "pria" && gender !== "wanita") {
+    throw new Error("Pilih jenis kelamin.");
+  }
+  const base = 10 * beratKg + 6.25 * tinggiCm - 5 * umur;
+  const bmr = gender === "pria" ? base + 5 : base - 161;
+  return { bmr };
+}
+
+const ACTIVITY_FACTORS = {
+  sedentary: 1.2,
+  ringan: 1.375,
+  sedang: 1.55,
+  aktif: 1.725,
+  "sangat-aktif": 1.9,
+};
+
+/* 14. KALKULATOR TDEE */
+function calculateTDEE(bmr, activityKey) {
+  if (!CalcUtils.isValidNumber(bmr) || bmr <= 0) {
+    throw new Error("BMR tidak valid.");
+  }
+  const factor = ACTIVITY_FACTORS[activityKey];
+  if (!factor) {
+    throw new Error("Pilih tingkat aktivitas.");
+  }
+  return { tdee: bmr * factor, factor };
+}
+
+/* 15. KALKULATOR KALORI (kebutuhan kalori harian sesuai target) */
+function calculateCalorieTarget(beratKg, tinggiCm, umur, gender, activityKey, goal) {
+  const { bmr } = calculateBMR(beratKg, tinggiCm, umur, gender);
+  const { tdee } = calculateTDEE(bmr, activityKey);
+
+  let target = tdee;
+  if (goal === "turun") target = tdee - 500;
+  else if (goal === "naik") target = tdee + 500;
+
+  const minimumAman = gender === "pria" ? 1500 : 1200;
+  const dibawahMinimum = target < minimumAman;
+  if (dibawahMinimum) target = minimumAman;
+
+  return { bmr, tdee, target, dibawahMinimum, minimumAman };
+}
+
+/* 16. KALKULATOR RATA-RATA */
+function calculateAverage(numbers) {
+  if (!Array.isArray(numbers) || numbers.length === 0) {
+    throw new Error("Masukkan minimal 1 angka.");
+  }
+  const parsed = numbers.map((n) => CalcUtils.toNumber(n));
+  if (parsed.some((n) => !CalcUtils.isValidNumber(n))) {
+    throw new Error("Semua angka harus diisi dengan benar.");
+  }
+  const jumlah = parsed.reduce((a, b) => a + b, 0);
+  const rataRata = jumlah / parsed.length;
+  return { rataRata, jumlah, banyakData: parsed.length };
+}
+
+function gcd(a, b) {
+  a = Math.abs(a);
+  b = Math.abs(b);
+  while (b) {
+    [a, b] = [b, a % b];
+  }
+  return a || 1;
+}
+
+/* 17. KALKULATOR PECAHAN */
+function calculateFraction(a, b, c, d, operator) {
+  [a, b, c, d].forEach((v, i) => {
+    if (!CalcUtils.isValidNumber(v)) throw new Error("Semua angka pecahan harus diisi dengan benar.");
+  });
+  if (b === 0 || d === 0) throw new Error("Penyebut pecahan tidak boleh 0.");
+
+  let num, den;
+  if (operator === "+") { num = a * d + c * b; den = b * d; }
+  else if (operator === "-") { num = a * d - c * b; den = b * d; }
+  else if (operator === "×") { num = a * c; den = b * d; }
+  else if (operator === "÷") {
+    if (c === 0) throw new Error("Tidak bisa membagi dengan pecahan bernilai 0.");
+    num = a * d; den = b * c;
+  } else {
+    throw new Error("Operator tidak dikenali.");
+  }
+
+  if (den < 0) { den = -den; num = -num; }
+  const divisor = gcd(num, den);
+  const simplifiedNum = num / divisor;
+  const simplifiedDen = den / divisor;
+  const decimal = num / den;
+
+  return { simplifiedNum, simplifiedDen, decimal };
+}
+
+/* 18. KALKULATOR PANGKAT */
+function calculatePower(base, exponent) {
+  if (!CalcUtils.isValidNumber(base)) throw new Error("Bilangan pokok harus diisi dengan benar.");
+  if (!CalcUtils.isValidNumber(exponent)) throw new Error("Pangkat harus diisi dengan benar.");
+  const result = Math.pow(base, exponent);
+  if (!isFinite(result)) throw new Error("Hasil terlalu besar untuk dihitung.");
+  return { result };
+}
+
+/* 19. KALKULATOR AKAR */
+function calculateRoot(number, degree) {
+  if (!CalcUtils.isValidNumber(number)) throw new Error("Angka harus diisi dengan benar.");
+  if (!CalcUtils.isValidNumber(degree) || degree === 0) throw new Error("Derajat akar harus diisi dan tidak boleh 0.");
+  if (number < 0 && degree % 2 === 0) {
+    throw new Error("Akar genap dari bilangan negatif tidak menghasilkan bilangan real.");
+  }
+  const sign = number < 0 ? -1 : 1;
+  const result = sign * Math.pow(Math.abs(number), 1 / degree);
+  return { result };
+}
+
+/* 20. KALKULATOR RASIO */
+function calculateRatioSimplify(a, b) {
+  if (!CalcUtils.isValidNumber(a) || a <= 0) throw new Error("Nilai pertama harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(b) || b <= 0) throw new Error("Nilai kedua harus lebih dari 0.");
+  const divisor = gcd(a, b);
+  return { simplifiedA: a / divisor, simplifiedB: b / divisor };
+}
+
+/* 21. KALKULATOR PERBANDINGAN (proporsi senilai a:b = c:d, cari d) */
+function calculateProportion(a, b, c) {
+  if (!CalcUtils.isValidNumber(a) || a === 0) throw new Error("Nilai A harus diisi dan tidak boleh 0.");
+  if (!CalcUtils.isValidNumber(b)) throw new Error("Nilai B harus diisi dengan benar.");
+  if (!CalcUtils.isValidNumber(c)) throw new Error("Nilai C harus diisi dengan benar.");
+  const d = (b * c) / a;
+  return { d };
+}
+
+/* 22. KALKULATOR LUAS LINGKARAN */
+function calculateCircle(jariJari) {
+  if (!CalcUtils.isValidNumber(jariJari) || jariJari <= 0) throw new Error("Jari-jari harus lebih dari 0.");
+  const luas = Math.PI * jariJari * jariJari;
+  const keliling = 2 * Math.PI * jariJari;
+  return { luas, keliling };
+}
+
+/* 23. KALKULATOR SEGITIGA */
+function calculateTriangleArea(alas, tinggi) {
+  if (!CalcUtils.isValidNumber(alas) || alas <= 0) throw new Error("Alas harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(tinggi) || tinggi <= 0) throw new Error("Tinggi harus lebih dari 0.");
+  const luas = 0.5 * alas * tinggi;
+  return { luas };
+}
+
+/* 24. KALKULATOR PERSEGI */
+function calculateSquare(sisi) {
+  if (!CalcUtils.isValidNumber(sisi) || sisi <= 0) throw new Error("Panjang sisi harus lebih dari 0.");
+  return { luas: sisi * sisi, keliling: 4 * sisi };
+}
+
+/* 25. KALKULATOR PERSEGI PANJANG */
+function calculateRectangle(panjang, lebar) {
+  if (!CalcUtils.isValidNumber(panjang) || panjang <= 0) throw new Error("Panjang harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(lebar) || lebar <= 0) throw new Error("Lebar harus lebih dari 0.");
+  return { luas: panjang * lebar, keliling: 2 * (panjang + lebar) };
+}
+
+/* 26. KALKULATOR VOLUME KUBUS */
+function calculateCubeVolume(sisi) {
+  if (!CalcUtils.isValidNumber(sisi) || sisi <= 0) throw new Error("Panjang sisi harus lebih dari 0.");
+  return { volume: Math.pow(sisi, 3), luasPermukaan: 6 * sisi * sisi };
+}
+
+/* 27. KALKULATOR VOLUME BALOK */
+function calculateBeamVolume(panjang, lebar, tinggi) {
+  if (!CalcUtils.isValidNumber(panjang) || panjang <= 0) throw new Error("Panjang harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(lebar) || lebar <= 0) throw new Error("Lebar harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(tinggi) || tinggi <= 0) throw new Error("Tinggi harus lebih dari 0.");
+  return { volume: panjang * lebar * tinggi };
+}
+
+/* 28. KALKULATOR VOLUME TABUNG */
+function calculateCylinderVolume(jariJari, tinggi) {
+  if (!CalcUtils.isValidNumber(jariJari) || jariJari <= 0) throw new Error("Jari-jari harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(tinggi) || tinggi <= 0) throw new Error("Tinggi harus lebih dari 0.");
+  const volume = Math.PI * jariJari * jariJari * tinggi;
+  return { volume };
+}
+
+/* 29. KALKULATOR KECEPATAN */
+function calculateSpeed(jarak, waktu) {
+  if (!CalcUtils.isValidNumber(jarak) || jarak <= 0) throw new Error("Jarak harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(waktu) || waktu <= 0) throw new Error("Waktu harus lebih dari 0.");
+  return { kecepatan: jarak / waktu };
+}
+
+/* 30. KALKULATOR JARAK */
+function calculateDistance(kecepatan, waktu) {
+  if (!CalcUtils.isValidNumber(kecepatan) || kecepatan <= 0) throw new Error("Kecepatan harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(waktu) || waktu <= 0) throw new Error("Waktu harus lebih dari 0.");
+  return { jarak: kecepatan * waktu };
+}
+
+/* 31. KALKULATOR BEP (Break Even Point) */
+function calculateBEP(biayaTetap, hargaJualPerUnit, biayaVariabelPerUnit) {
+  if (!CalcUtils.isValidNumber(biayaTetap) || biayaTetap <= 0) throw new Error("Biaya tetap harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(hargaJualPerUnit) || hargaJualPerUnit <= 0) throw new Error("Harga jual per unit harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(biayaVariabelPerUnit) || biayaVariabelPerUnit < 0) throw new Error("Biaya variabel per unit tidak boleh negatif.");
+  if (biayaVariabelPerUnit >= hargaJualPerUnit) {
+    throw new Error("Biaya variabel per unit harus lebih kecil dari harga jual per unit.");
+  }
+  const marginKontribusi = hargaJualPerUnit - biayaVariabelPerUnit;
+  const bepUnit = biayaTetap / marginKontribusi;
+  const bepRupiah = bepUnit * hargaJualPerUnit;
+  return { bepUnit, bepRupiah, marginKontribusi };
+}
+
+/* 32. KALKULATOR ROI */
+function calculateROI(labaBersih, modal) {
+  if (!CalcUtils.isValidNumber(labaBersih)) throw new Error("Laba bersih harus diisi dengan benar.");
+  if (!CalcUtils.isValidNumber(modal) || modal <= 0) throw new Error("Modal harus lebih dari 0.");
+  const roiPercent = (labaBersih / modal) * 100;
+  return { roiPercent };
+}
+
+/* 33. KALKULATOR ROAS */
+function calculateROAS(pendapatanIklan, biayaIklan) {
+  if (!CalcUtils.isValidNumber(pendapatanIklan) || pendapatanIklan < 0) throw new Error("Pendapatan dari iklan tidak boleh negatif.");
+  if (!CalcUtils.isValidNumber(biayaIklan) || biayaIklan <= 0) throw new Error("Biaya iklan harus lebih dari 0.");
+  const roas = pendapatanIklan / biayaIklan;
+  return { roas, roasPercent: roas * 100 };
+}
+
+/* 34. KALKULATOR PROFIT */
+function calculateProfit(pendapatan, biaya) {
+  if (!CalcUtils.isValidNumber(pendapatan) || pendapatan < 0) throw new Error("Pendapatan tidak boleh negatif.");
+  if (!CalcUtils.isValidNumber(biaya) || biaya < 0) throw new Error("Biaya tidak boleh negatif.");
+  const profit = pendapatan - biaya;
+  const marginPercent = pendapatan === 0 ? 0 : (profit / pendapatan) * 100;
+  return { profit, marginPercent };
+}
+
+/* 35. KALKULATOR HPP */
+function calculateHPP(totalBiayaProduksi, jumlahUnit) {
+  if (!CalcUtils.isValidNumber(totalBiayaProduksi) || totalBiayaProduksi <= 0) throw new Error("Total biaya produksi harus lebih dari 0.");
+  if (!CalcUtils.isValidNumber(jumlahUnit) || jumlahUnit <= 0) throw new Error("Jumlah unit harus lebih dari 0.");
+  return { hppPerUnit: totalBiayaProduksi / jumlahUnit };
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     CalcUtils,
@@ -275,5 +582,30 @@ if (typeof module !== "undefined" && module.exports) {
     calculateLandArea,
     calculatePaint,
     calculateTile,
+    calculateKPR,
+    calculateBMI,
+    calculateBMR,
+    calculateTDEE,
+    calculateCalorieTarget,
+    calculateAverage,
+    calculateFraction,
+    calculatePower,
+    calculateRoot,
+    calculateRatioSimplify,
+    calculateProportion,
+    calculateCircle,
+    calculateTriangleArea,
+    calculateSquare,
+    calculateRectangle,
+    calculateCubeVolume,
+    calculateBeamVolume,
+    calculateCylinderVolume,
+    calculateSpeed,
+    calculateDistance,
+    calculateBEP,
+    calculateROI,
+    calculateROAS,
+    calculateProfit,
+    calculateHPP,
   };
 }
